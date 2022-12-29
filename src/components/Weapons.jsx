@@ -14,8 +14,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 const MiniTable = props => (
-  <TableContainer component={Paper} style={{ margin: "10px" }}>
-    <Table sx={{ minWidth: 350 }} aria-label="simple table">
+  <TableContainer component={Paper} style={{ marginTop: "10px" }}>
+    <Table aria-label="simple table">
       <TableHead>
         <TableRow>
           <TableCell>{props.firstLabel}</TableCell>
