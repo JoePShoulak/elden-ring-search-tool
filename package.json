@@ -1,7 +1,7 @@
 {
-  "name": "p5-react-app-template",
+  "name": "elden-ring-search-tool",
   "version": "0.1.0",
-  "homepage": "https://joepshoulak.github.io/p5-react-app-template",
+  "homepage": "https://joepshoulak.github.io/elden-ring-search-tool",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
