@@ -1,6 +1,6 @@
 import { AppBar as MUIAppBar, Toolbar, Typography } from "@mui/material";
 
-const AppBar = () => (
+const AppBar = props => (
   <MUIAppBar
     position="static"
     color="default"
@@ -10,6 +10,7 @@ const AppBar = () => (
       <Typography variant="h5" color="inherit" noWrap sx={{ flexGrow: 1 }}>
         ERST
       </Typography>
+      {props.children}
     </Toolbar>
   </MUIAppBar>
 );

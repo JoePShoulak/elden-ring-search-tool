@@ -107,7 +107,7 @@ const Weapons = () => {
   useEffect(() => {
     async function loadWeapons() {
       const response = await fetch(
-        "https://eldenring.fanapis.com/api/weapons?limit=20&page=1"
+        "https://eldenring.fanapis.com/api/weapons?limit=20&page=0"
       );
       const results = await response.json();
 
