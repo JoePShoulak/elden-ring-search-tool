@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Table, TableContainer, Typography } from "@mui/material";
+import {
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
+  Grid,
+  Table,
+  TableContainer,
+  Typography,
+} from "@mui/material";
 
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -107,7 +115,7 @@ const Weapons = () => {
   useEffect(() => {
     async function loadWeapons() {
       const response = await fetch(
-        "https://eldenring.fanapis.com/api/weapons?limit=20&page=0"
+        "https://eldenring.fanapis.com/api/weapons?limit=100&page=0"
       );
       const results = await response.json();
 
@@ -121,14 +129,24 @@ const Weapons = () => {
 
   return (
     weapons && (
-      <>
-        <Typography variant="h4" style={{ marginBottom: "20px" }}>
-          Weapons
-        </Typography>
-        {weapons.map(wep => (
-          <Weapon weapon={wep} key={wep.id} />
-        ))}
-      </>
+      <Grid container spacing={2}>
+        <Grid item xs={4}>
+          <Typography variant="h4" style={{ marginBottom: "20px" }}>
+            Filters
+          </Typography>
+          <FormGroup>
+            <FormControlLabel control={<Checkbox />} label="Filter.0000" />
+          </FormGroup>
+        </Grid>
+        <Grid item xs={8}>
+          <Typography variant="h4" style={{ marginBottom: "20px" }}>
+            Weapons
+          </Typography>
+          {weapons.map(wep => (
+            <Weapon weapon={wep} key={wep.id} />
+          ))}
+        </Grid>
+      </Grid>
     )
   );
 };
